@@ -1,49 +1,71 @@
-import React, { useState, useEffect } from 'react'
-import logo from './logo.svg';
+import React, { useState } from 'react'
+
+
 
 export default function Form() {
-    const [uName, setName] = useState ('');
-    const [role, setRole] = useState('');
-    const [email, setEmail] = useState('');
+    const [formData, setFormData] = useState ({
+      uName: '',
+      role: '',
+      email: ''
+    });
 
+//Submit Handler
     const handleSubmit = event => {
       event.preventDefault();
-      console.log({email, uName, role});
+      console.log(formData);
+      alert('Your information has been saved!');
+      
     };
 
+//Input Change Handler
+  const onInputChange = event => {
+
+    setFormData({
+    
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  }
+
     return (
-        <div className="App">
-     
+        <div >
+          
+        
+
       <header className="App-header">
-        <h1>Hello there {uName}, your your role is {role} and your contact email is {email}</h1>
-       
+     
+      
+   
+       <h3>Add a teamate here</h3>
         <form onSubmit={event => handleSubmit(event)}>
+
+
         <label>
           Username:  
-        <input onChange = {event => {
-          setName(event.target.value);
-        } }  type = 'text'></input>
+          <input placeholder='Username' name='uName' onChange = {onInputChange} />
         </label>
 
         <label>
           Email:  
-        <input onChange = {event => {
-          setEmail(event.target.value);
-        } }id='email' type = 'text'></input>
+          <input placeholder = 'E-mail' name='email' onChange = {onInputChange} />
         </label>
 
         <label>
           Role:  
-        <input onChange = {event => {
-          setRole(event.target.value);
-        } } type = 'text'></input>
+          <input placeholder='Role' name='role' onChange = {onInputChange} />
         </label>
 
-        <button  >Submit!</button>
+        <button>Submit!</button>
 
       </form>
+
+    
        
       </header>
+
+
+
+      
     </div>
     )
 }

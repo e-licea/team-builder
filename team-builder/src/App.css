@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+span{
+  color: red;
+}
+
+.team-list{
+  border: red solid 3px;
+  width: 70%;
+  height: 500px;
+}
