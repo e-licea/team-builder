@@ -32,7 +32,7 @@ export default function Form() {
           
         
 
-      <header className="App-header">
+      <header className="App-header ">
      
       
    

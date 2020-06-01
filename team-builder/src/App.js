@@ -33,10 +33,10 @@ let data = [
 
 console.log({data})
   return (
-    <div className = 'App App-header'>
-
+    <div className = 'component-conatiner'>
+    
     <TeamList data = {data} />
-    <Form />
+    <Form />   
     
     
     
